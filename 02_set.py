@@ -1,6 +1,15 @@
 
 # SET == NO DUPLICATIONS!!!!
 
+
+# DONT DO  !!
+# s0 = { }  --> this will not give you en EMPTY set
+
+# DO
+s0 = set()  # for empty set
+
+print(s0)
+
 s1 = {10, 50, 20}
 print(s1)
 # print(type(s1))
@@ -63,13 +72,30 @@ You have a list of names for a party, but some people signed up twice.
 - Use a set to automatically remove the duplicates
 - Check if "Emma" is in your set. If she is not there, add her
 - Print the final number of unique guests using len()
+'''
+names = ["Alice", "Bob", "Charlie", "Alice", "David", "Bob"]
+set_names = set(names)
+print(set_names)
+if 'Emma' not in set_names:
+    set_names.add('Emma')
+print(f"Number of guests {len(set_names)}")
 
+'''
 Exercise 2: Safe Deletion Race
 - Create a set called codes containing: 101, 102, 103, 104
-- Use .pop() to remove one random code and print it
+- Use .pop() to remove one number and print it (this is not deterministic which item will be removes)
+   so it feels like random
 - Try to use .remove() to delete the number 999 --> ERROR!, so- Wrap it with if to avoid crash
 - Use .discard() to delete the number 999
 '''
+codes = set([101, 102, 103, 104])
+codes.pop()
+if 999 in codes:
+    codes.remove(999)
+codes.discard(999)
+
+# print(list(codes[0]))
+
 
 # **BONUS**
 # **BONUS**
@@ -80,11 +106,18 @@ import random
 
 random_nums = []
 
-for i in range(30):
+for i in range(3):
     num = random.randint(1, 10)
     random_nums.append(num)
 
 print(random_nums)
+
+# list_random -> set
+#   1. set -> list -> sort
+#      for each number print count
+#   2. set -> for each min(set)
+
+print(sorted(set(random_nums)))
 
 # print each number and how many times, without duplications
 # hint: sort, set, count
