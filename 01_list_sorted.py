@@ -87,9 +87,11 @@ print(sorted(names, key=len))  # the capital comes first
 # words = ["banana", "kiwi", "apple", "fig", "watermelon"]
 '''
 Do:
-Print nums sorted ascending (without changing original)
-Sort nums in-place descending
+Print nums sorted ascending (without changing original), hint: use sorted
+Sort nums in-place descending hint: use sort
 Print words alphabetically A→Z
 Print words by length shortest→longest
 Print words by length longest→shortest. hint: reverse=True
 '''
+
+
